@@ -6,9 +6,9 @@ app = Flask(__name__)
 
 def restart():
     dev = os.open("/dev/hidraw0", os.O_RDWR)
-    os.write(dev,"\x00\x01")
+    os.write(dev,str.encode("\x00\x01"))
     time.sleep(1)
-    os.write(dev, "\x00\xf1")
+    os.write(dev, str.encode("\x00\xf1"))
 
 @app.route("/", methods=['GET', 'POST'])
 def control():
