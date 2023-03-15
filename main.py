@@ -1,15 +1,13 @@
-import subprocess
+import os
 import time
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 def restart():
-    subprocess.run(['echo', '-n', '-e', '\x00\x01', '>', '/dev/hidraw0'],
-                               stdout=subprocess.PIPE)
+    os.system("echo -n -e '\x00\xf1' >/dev/hidraw0")
     time.sleep(1)
-    subprocess.run(['echo', '-n', '-e', '\x00\xf1', '>', '/dev/hidraw0'],
-                               stdout=subprocess.PIPE)
+    os.system("echo -n -e '\x00\x01' >/dev/hidraw0")
     
 @app.route("/", methods=['GET', 'POST'])
 def control():
