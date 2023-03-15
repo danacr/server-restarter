@@ -7,17 +7,18 @@ app = Flask(__name__)
 
 def restart():
     dev = os.open("/dev/hidraw0", os.O_RDWR)
-    os.write(dev,b'\x00'b'\x01')
+    # turn the relay on
+    os.write(dev, b'\x00\xf1')
     time.sleep(1)
-    os.write(dev,'\x00'b'\xf1')
+    # turn the relay off
+    os.write(dev, b'\x00\x01')
 
 @app.route("/", methods=['GET', 'POST'])
 def control():
     if request.method == 'POST':
         match request.form.get('action'):
             case "Restart":
-                subprocess.run([busylight_path, 'on', 'green'],
-                               stdout=subprocess.PIPE)
+                restart()
     return render_template('index.html')
 
 if __name__ == '__main__':
