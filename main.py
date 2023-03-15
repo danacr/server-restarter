@@ -16,9 +16,7 @@ def restart():
 @app.route("/", methods=['GET', 'POST'])
 def control():
     if request.method == 'POST':
-        match request.form.get('action'):
-            case "Restart":
-                restart()
+        restart()
     return render_template('index.html')
 
 if __name__ == '__main__':
