@@ -47,7 +47,7 @@ switch:
     methos: 'POST'
 ```
 
-If you have the [HomeKit integration](https://www.home-assistant.io/integrations/homekit/) on HomeAssistant, it will make the switch available on you iPhone as well.
+If you have the [HomeKit integration](https://www.home-assistant.io/integrations/homekit/) on HomeAssistant, it will make the switch available on your iPhone as well.
 ### Room
 ![Room](./images/IMG_0486.jpeg)
 ### Switch
