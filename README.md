@@ -52,3 +52,11 @@ If you have the [HomeKit integration](https://www.home-assistant.io/integrations
 ![Room](./images/IMG_0486.jpeg)
 ### Switch
 ![Switch](./images/IMG_0485.jpeg)
+
+
+### Docker:
+How to build an arm64 image on an x86 machine:
+```bash
+docker buildx build \
+    --platform=linux/arm64 --tag test .
+```

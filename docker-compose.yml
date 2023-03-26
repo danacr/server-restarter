@@ -2,8 +2,9 @@ version: '3'
 services:
   server_restarter:
     container_name: server_restarter
-    image: homeassistant/home-assistant
+    image: danacr/server-restarter:latest
     volumes:
       - /dev/hidraw0:/dev/hidraw0:rw
     restart: unless-stopped
-    network_mode: host
+    ports:
+      - 80:80

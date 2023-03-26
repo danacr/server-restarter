@@ -1,7 +1,7 @@
 FROM python:3-alpine
 
-# https://stackoverflow.com/questions/71372066/docker-fails-to-install-cffi-with-python3-9-alpine-in-dockerfile&cd=1&hl=en&ct=clnk&gl=ch
-RUN apk add libffi-dev
+# because in the case of arm64 we need to build from source some packages
+RUN apk add libffi-dev gcc musl-dev
 
 RUN pip install poetry
 
