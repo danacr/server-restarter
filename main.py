@@ -1,6 +1,5 @@
 import os
 import time
-import subprocess
 from flask import Flask, render_template, request
 
 app = Flask(__name__)

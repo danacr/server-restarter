@@ -4,7 +4,6 @@ version = "0.1.0"
 description = ""
 authors = ["danacr <dan@acristinii.com>"]
 readme = "README.md"
-packages = [{include = "server_restarter"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
