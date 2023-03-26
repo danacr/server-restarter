@@ -60,3 +60,10 @@ How to build an arm64 image on an x86 machine:
 docker buildx build \
     --platform=linux/arm64 --tag test .
 ```
+
+I had to modify the [usbrelay.rules](https://github.com/darrylb123/usbrelay/blob/master/50-usbrelay.rules) from 0660 to [0666](./50-usbrelay.rules) so that any user could write to that path.
+
+To run:
+```bash
+docker compose up -d
+```
