@@ -44,7 +44,7 @@ To add my relay as a switch to [HomeAssistant](https://www.home-assistant.io/), 
 switch:
   - platform: rest
     resource: http://192.168.1.100/
-    methos: 'POST'
+    method: 'POST'
 ```
 
 If you have the [HomeKit integration](https://www.home-assistant.io/integrations/homekit/) on HomeAssistant, it will make the switch available on your iPhone as well.
